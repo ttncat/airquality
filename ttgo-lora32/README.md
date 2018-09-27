@@ -31,6 +31,8 @@ Farem les següents connexions:
 
 ![Cablejat](images/ttgo-lora-bme280-mics.png)
 
+![TTGO LoRa32 pin-out](images/ttgo-lora32-pinout.jpg)
+
 ## Configurar l'entorn de desenvolupament
 
 #### IDE d'Arduino
@@ -97,7 +99,7 @@ Primer ens assegurarem que tenim la placa conectada via USB a l'ordinador. Anire
 
 ![Selecció de placa](images/arduino-ide-menu-board.jpg)
 
-El primer botó de la botonera de l'IDE d'Arduino nes permet "compilar" el programa. Aquí podrem si tot està bé, si no hi ha errors en el codi o dependències no complertes. Si tot va bé mostrarà el missatge "Compilat".
+El primer botó de la botonera de l'IDE d'Arduino ens permet "compilar" el programa. Aquí podrem si tot està bé, si no hi ha errors en el codi o dependències no complertes. Si tot va bé mostrarà el missatge "Compilat".
 
 Després ja podem pujar el codi a la placa fent servir el segon botó de la botonera de l'IDE. Si tot va bé mostrarà el missatge "Pujat". Aleshores podrem obrir el monitor sèrie (el botó més a la dreta de la botonera) i veure els missatges de la placa.
 
