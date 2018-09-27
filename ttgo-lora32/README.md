@@ -35,19 +35,29 @@ Farem les següents connexions:
 
 #### IDE d'Arduino
 
-Per treballar amb l'IDE d'Arduino necessitarem la darrera versió (1.8.X a data d'avui) i instal·lar suport per el microcontrolador ESP32 que fa servir la TTGO-LORA32 i les llibreries necessàries per treballar amb el mòdul LoRa, la pantalla OLED i els sensors.
+Per treballar amb l'IDE d'Arduino necessitarem la darrera versió (1.8.X a data d'avui) i instal·lar suport per el microcontrolador ESP32 que fa servir la TTGO-LORA32 i les biblioteques necessàries per treballar amb el mòdul LoRa, la pantalla OLED i els sensors.
 
 **Afegir suport per ESP32 a l'IDE d'Arduino**
 
-El primer que hem de fer és afegir suport per el microcontrolador ESP32 d'Espressif a l'IDE d'Arduino. Aquest procés és força senzill. Només cal anar a `Arxiu > Preferències` i en el camp `URLs addicionals per el gestor de plaques` indicar aquesta URL:
+El primer que hem de fer és afegir suport per el microcontrolador ESP32 d'Espressif a l'IDE d'Arduino. Aquest procés és força senzill. Només cal anar a `Fitxer > Preferències` i en el camp `URLs addicionals de gestor de plaques` indicar aquesta URL:
 
 `https://dl.espressif.com/dl/package_esp32_index.json`
 
+![Menú preferències](images/arduino-ide-menu-preferences.jpg)
+
+![Preferències](images/arduino-ide-preferences.jpg)
+
 En cas que ja hi hagués alguna altra URL diferent podem separar-les per comes.
 
-Un cop fet anirem a `Eines > Plaques ... > Gestor de plaques`. En el quadre de text buscarem `ESP32` i ens hauria de sortir una única opció. Cliquem a sobre i triem `Instal·lar`. Començarà el procés de descàrrega i instal·lació dels fitxers necessaris per treballar amb aquest microcontrolador.
+Un cop fet anirem a `Eines > Placa: "..." > Gestor de plaques...`. En el quadre de text buscarem `ESP32` i ens hauria de sortir una única opció. Cliquem a sobre i triem `Instal·la`. Començarà el procés de descàrrega i instal·lació dels fitxers necessaris per treballar amb aquest microcontrolador.
 
-Si tot ha anat bé, a sota de `Eines > Plaques...` hauriem de veure una secció `ESP32 Arduino` i en particular una placa anomenada `ESP32 Dev Module` que seleccionarem.
+![Menú gestor de plaques](images/arduino-ide-menu-board-manager.jpg)
+
+![Gestor de plaques](images/arduino-ide-board-manager.jpg)
+
+Si tot ha anat bé, a sota de `Eines > Placa: "..."` hauriem de veure una secció `ESP32 Arduino` i en particular una placa anomenada `ESP32 Dev Module` que seleccionarem.
+
+![Selecció de placa](images/arduino-ide-menu-board.jpg)
 
 La informació original d'aquest procediment la podeu trobar aquí:
 https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md
@@ -60,9 +70,16 @@ Per aquest projecte necessitarem tres biblioteques. Les tres es poden trobar a l
 * "ESP8266 and ESP32 Oled Driver for SSD1306 display" per fer servir la pantalla OLED.
 * "LMIC Arduino" per comunicar-nos amb el mòdul LoRa.
 
-Excepte la darrera, les altres dos les podem trobar al Gestor de Llibreries sota `Programa > Incloure llibreria > Gestor de llibreries`. Les busquem i les instal·lem.
+Excepte la darrera, les altres dos les podem trobar al Gestor de Biblioteques sota `Esbós > Inclou la biblioteca > Gestiona les biblioteques...`. Les busquem i les instal·lem.
 
-L'altra l'haurem d'instal·lar direcment des de l'arxiu ZIP ja que la disponible en el gestor de llibreries no ens serveix. Per fer-ho anem a `Programa > Incloure llibreria > Afegir llibreria .ZIP`, la busquem en el nostre ordinador i la instal·lem.
+![Menú gestor de biblioteques](images/arduino-ide-menu-library-manager.jpg)
+
+![Gestor de biblioteques](images/arduino-ide-library-manager.jpg)
+
+L'altra l'haurem d'instal·lar direcment des de l'arxiu ZIP ja que la disponible en el Gestor de Biblioteques no ens serveix. Per fer-ho anem a `Esbós > Inclou la biblioteca > Afegeix una biblioteca .ZIP`, la busquem en el nostre ordinador i la instal·lem.
+
+![Afegir biblioteca ZIP](images/arduino-ide-add-library.jpg)
+
 
 #### PlatformIO
 
@@ -76,7 +93,9 @@ El primer que cal fer és configurar les dades per connectar-nos a TTN. Duplica 
 
 #### IDE d'Arduino
 
-Primer ens assegurarem que tenim la placa conectada via USB a l'ordinador. Anirem a `Eines > Plaques...` i seleccionarem la placa anomenada `ESP32 Dev Module` si no ho hem fet ja. Després sota la opció `Eines > Port...` ens assegurarem que està seleccionat el port de comunicació on tenim la placa. Normalment només hi haurà un, o sigui que serà fàcil saber quin és.
+Primer ens assegurarem que tenim la placa conectada via USB a l'ordinador. Anirem a `Eines > Placa: "..."` i seleccionarem la placa anomenada `ESP32 Dev Module` si no ho hem fet ja. Després sota la opció `Eines > Port...` ens assegurarem que està seleccionat el port de comunicació on tenim la placa. Normalment només hi haurà un, o sigui que serà fàcil saber quin és.
+
+![Selecció de placa](images/arduino-ide-menu-board.jpg)
 
 El primer botó de la botonera de l'IDE d'Arduino nes permet "compilar" el programa. Aquí podrem si tot està bé, si no hi ha errors en el codi o dependències no complertes. Si tot va bé mostrarà el missatge "Compilat".
 
