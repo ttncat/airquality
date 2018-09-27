@@ -10,9 +10,9 @@ Node de monitorització de qualitat de l'aire sobre TTN amb un TTGO LoRa32.
 
 ### Components
 
-* TTGO LoRa32 (https://shop.thethingsnetwork.com/index.php/product/the-things-uno/)
-* Sensor BME280
-* Sensor MICS-4514
+* TTGO LoRa32 ([Aliexpress](https://www.aliexpress.com/item/TTGO-LORA32-868-915Mhz-SX1276-ESP32-Oled-display-Bluetooth-WIFI-Lora/32840222847.html))
+* Sensor BME280 ([Aliexpress](https://www.aliexpress.com/item/High-Accuracy-BME280-Digital-Sensor-Temperature-Humidity-Barometric-Pressure-Sensor-Module-GY-BME280-I2C-SPI-1/32672210336.html))
+* Sensor MICS-4514 ([Aliexpress](https://www.aliexpress.com/item/CJMCU-4541-MICS-4514-MEMS-Carbon-Monoxide-Nitrogen-Oxygen-Sensor-CO-NO2-H2-NH3-CH4-High/32867246863.html))
 * Cables i/o protoboard per fer les connexions
 
 ### Cablejat
