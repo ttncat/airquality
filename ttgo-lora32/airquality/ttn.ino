@@ -129,7 +129,7 @@ void ttn_join() {
     // Reset the MAC state. Session and pending data transfers will be discarded.
     LMIC_reset();
 
-    #if TTN_ACTIVATION == ACTIVATION_ABP
+    #ifdef USE_ABP
 
         // Set static session parameters. Instead of dynamically establishing a session
         // by joining the network, precomputed session parameters are be provided.

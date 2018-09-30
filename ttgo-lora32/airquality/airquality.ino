@@ -26,13 +26,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include "configuration.h"
+#include <rom/rtc.h>
 
 // -----------------------------------------------------------------------------
 // Configuration
 // -----------------------------------------------------------------------------
 
-// Message counter
-uint8_t count = 0;
+// Message counter, stored in RTC memory, survives deep sleep
+RTC_DATA_ATTR uint32_t count = 0;
 
 // -----------------------------------------------------------------------------
 // Application
@@ -65,7 +66,7 @@ void send() {
     DEBUG_MSG("\n");
 
     char buffer[64];
-    snprintf(buffer, sizeof(buffer),"[TTN] Sending #%03d\n", count);
+    snprintf(buffer, sizeof(buffer),"[TTN] Sending #%03d\n", (uint8_t) (count & 0xFF));
     screenPrint(buffer);
 
     /*
@@ -102,9 +103,9 @@ void send() {
     // rescale
     temperature = 100 * (temperature + 40.0);
     pressure = 100 * (pressure - 900.0);
-
+    //temperature = 100 * (temperature + 40.0);
     uint8_t data[10] = {
-        count,
+        (uint8_t) (count & 0xFF),
         msb(temperature), lsb(temperature),
         lsb(humidity),
         msb(pressure), lsb(pressure),
@@ -117,7 +118,7 @@ void send() {
     #else
         bool confirmed = false;
     #endif
-    ttn_send(data, 10, LORAWAN_PORT, confirmed);
+    ttn_send(data, sizeof(data), LORAWAN_PORT, confirmed);
 
     count++;
 
